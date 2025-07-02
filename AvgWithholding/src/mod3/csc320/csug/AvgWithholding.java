@@ -6,44 +6,56 @@ public class AvgWithholding {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		double taxRate1 = 0.1;
-		double taxRate2 = 0.15;
-		double taxRate3 = 0.2;
-		double taxRate4 = 0.3;
-		double incomeWeekly = 0.0;
-		double witholding = 0.0;
 		
-		System.out.println("Please enter your weekly income.");
+		TaxCalculations taxRate1 = new TaxCalculations(0.1);
+		TaxCalculations taxRate2 = new TaxCalculations(0.15);
+		TaxCalculations taxRate3 = new TaxCalculations(0.2);
+		TaxCalculations taxRate4 = new TaxCalculations(0.3);
 		
-		if (scanner.hasNextDouble()) {
-			incomeWeekly = scanner.nextDouble();
-		}
-		else {
-			System.out.println("Invalid entry.");
-		}
+		System.out.println("Please choose one of the following options:");
+		System.out.println("For administrator options type \"A\"\n");
+		System.out.println("For employee options type \"E\"");
 		
-		if (incomeWeekly < 500.00) {
-			witholding = incomeWeekly * taxRate1;
-			System.out.println("Your tax rate is 10%");
-			System.out.printf("$%.2f will be withheld per week.", witholding);
+		String mainMenuSelection = scanner.next();
+		if (mainMenuSelection.equalsIgnoreCase("A")) {
+			System.out.println("Print display of current taxRates with getter and provide "
+					+ "options to set new taxrates");
 		}
-		else if (incomeWeekly < 1500.00) {
-			witholding = incomeWeekly * taxRate2;
-			System.out.println("Your tax rate is 15%");
-			System.out.printf("$%.2f will be withheld per week.", witholding);
-		}
-		else if (incomeWeekly < 2500.00) {
-			witholding = incomeWeekly * taxRate3;
-			System.out.println("Your tax rate is 20%");
-			System.out.printf("$%.2f will be withheld per week.", witholding);
-		}
-		else {
-			witholding = incomeWeekly * taxRate4;
-			System.out.println("Your tax rate is 30%");
-			System.out.printf("$%.2f will be withheld per week.", witholding);
-		}
-		
+		else if (mainMenuSelection.equalsIgnoreCase("E")) {
+			
+			System.out.println("To view your current tax rate and witholding "
+				+ "please enter your weekly income.\n");
+			
+			double incomeWeekly = 0.0;
+	
+			if (scanner.hasNextDouble()) {
+				incomeWeekly = scanner.nextDouble();
+			}
+			else {
+				System.out.println("Invalid entry.");
+			}
+			
+//FIXME I need a way to determine the taxRate object before calling method to calculate (and print)
+//and I will need to alter the calculate method to something simpler
 
+		}
+		
+		
+		
+		
+		scanner.close();
 	}
 
 }
+
+/*
+taxRate1.weeklyWitholdingCalc(incomeWeekly);
+taxRate2.weeklyWitholdingCalc(incomeWeekly);
+taxRate3.weeklyWitholdingCalc(incomeWeekly);
+taxRate4.weeklyWitholdingCalc(incomeWeekly);
+
+taxRate1.printResult();
+taxRate2.printResult();
+taxRate3.printResult();
+taxRate4.printResult();
+*/
