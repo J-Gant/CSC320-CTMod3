@@ -3,6 +3,7 @@ package mod3.csc320.csug;
 public class TaxCalculations {
 	private double taxRate;
 	private double witholding;
+	
 
 	// constructor allows creation/initialization of taxRate objects
 	public TaxCalculations(double taxRateParam) {
@@ -19,15 +20,7 @@ public class TaxCalculations {
 	}
 
 	public void weeklyWitholdingCalc(double incomeWeeklyParam) {
-		if (incomeWeeklyParam < 500.00) {
-			witholding = incomeWeeklyParam * getTaxRate();
-		} else if (incomeWeeklyParam < 1500.00) {
-			witholding = incomeWeeklyParam * getTaxRate();
-		} else if (incomeWeeklyParam < 2500.00) {
-			witholding = incomeWeeklyParam * getTaxRate();
-		} else {
-			witholding = incomeWeeklyParam * getTaxRate();
-		}
+
 	}
 	
 	public double getWitholding() {
