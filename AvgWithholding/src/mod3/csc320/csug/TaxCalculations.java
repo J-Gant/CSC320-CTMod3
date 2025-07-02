@@ -2,7 +2,7 @@ package mod3.csc320.csug;
 
 public class TaxCalculations {
 	private double taxRate;
-	private double witholding;
+	private double withholding;
 	
 
 	// constructor allows creation/initialization of taxRate objects
@@ -19,17 +19,17 @@ public class TaxCalculations {
 		return taxRate;
 	}
 
-	public void weeklyWitholdingCalc(double incomeWeeklyParam) {
-
+	public void weeklyWithholdingCalc(double incomeWeeklyParam, double taxRateParam) {
+		withholding = incomeWeeklyParam * taxRateParam;
 	}
 	
-	public double getWitholding() {
-		return witholding;
+	public double getWithholding() {
+		return withholding;
 	}
 	
 	public void printResult() {
 		 System.out.printf("Your tax rate is %.0f%%%n", (getTaxRate() * 100));
-		 System.out.printf("$%.2f will be withheld per week.%n", getWitholding()); 
+		 System.out.printf("$%.2f will be withheld per week.%n", withholding); 
 	}
 }
 
