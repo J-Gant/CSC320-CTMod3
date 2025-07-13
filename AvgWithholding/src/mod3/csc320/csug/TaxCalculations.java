@@ -32,14 +32,3 @@ public class TaxCalculations {
 		 System.out.printf("$%.2f will be withheld per week.%n", withholding); 
 	}
 }
-
-/*
-System.out.println("Your tax rate is 15%");
-System.out.printf("$%.2f will be withheld per week.", witholding); 
-
-System.out.println("Your tax rate is 20%");
-System.out.printf("$%.2f will be withheld per week.", witholding); 
-
-System.out.println("Your tax rate is 30%");
-System.out.printf("$%.2f will be withheld per week.", witholding); 
-*/
